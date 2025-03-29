@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" style="border: 3px solid rgb(13, 38, 150); ">
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>岑立翔的网站</title>
+        <style>
+             /* 雪花样式 */
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: white;
+            font-size: 1em;
+            pointer-events: none;
+            z-index: 9999;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+            /* 基本样式 */
+            body {
+                font-family: 'Arial', sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+            }
+            h1, h2, h3 {
+                color: #333;
+            }
+            .c {
+                text-align: center;
+                padding: 20px;
+            }
+            .b {
+                background-color: #e0f7fa;
+            }
+            .z {
+                font-size: 30px;
+                margin-top: 20px;
+            }
+            p {
+                line-height: 1.6;
+                color: #555;
+            }
+            hr {
+                border: 1px solid #ccc;
+                margin: 20px 0;
+            }
+            .container {
+                width: 80%;
+                margin: auto;
+                overflow: hidden;
+            }
+            .navbar {
+                background: #00796b;
+                color: #fff;
+                padding: 10px 0;
+                text-align: center;
+            }                        
+            ul li {
+                margin: 10px 0;
+            }
+            ul li img {
+                width: 100%;
+                max-width: 80px;
+                height: auto;
+                border-radius: 8px;
+            }
+            /* 响应式设计 */
+            @media (max-width: 768px) {
+                body {
+                    font-size: 16px;
+                }
+                h1 {
+                    font-size: 24px;
+                }
+                h2 {
+                    font-size: 20px;
+                }
+                h3 {
+                    font-size: 18px;
+                }
+                .c {
+                    padding: 10px;
+                }
+                ul li img {
+                    max-width: 60px;
+                }
+            }
+            @media (max-width: 480px) {
+                body {
+                    font-size: 14px;
+                }
+                h1 {
+                    font-size: 20px;
+                }
+                h2 {
+                    font-size: 18px;
+                }
+                h3 {
+                    font-size: 16px;
+                }
+                .c {
+                    padding: 5px;
+                }
+                ul li img {
+                    max-width: 1000px;
+                }
+            }
+        </style>
+        <script>
+            window.onload = function() {
+                // 页面加载完成后，显示欢迎信息
+                alert("欢迎来到岑立翔的网站！");}
+                window.onbeforeunload = function() {
+                    var e = event || window.event;
+                    if (e) {
+                        e.returnValue = "你确定要离开吗？"; // 显示提示信息
+                    }
+                 
+                }
+             // 雪花特效
+        const snowflakeCount = 100; // 雪花数量
+        const snowflakeSymbols = ['❄', '✻', '✼', '❅', '❆']; // 雪花符号
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.textContent = snowflakeSymbols[Math.floor(Math.random() * snowflakeSymbols.length)];
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 1 + 's'; // 随机下落速度
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px'; // 随机大小
+            document.body.appendChild(snowflake);
+            // 动画结束后移除雪花
+            snowflake.addEventListener('animationend', () => {
+                snowflake.remove();
+            });
+        }
+        // 定时生成雪花
+        setInterval(createSnowflake, 400);
+        </script>
+    <body class="b">
+        <div class="c">
+            <img alt="岑立翔的头像" title="岑立翔的头像" src="https://avatars.githubusercontent.com/u/180803519?v=4" width="80px" height="80px">
+            <h1>hello!</h1>
+        </div>
+        <div class="c">
+            <p>我的个人网站是一个展示个人信息和兴趣爱好的平台。</p>
+            <p>在这里，你可以找到关于我的一些基本信息、我的兴趣爱好以及我正在进行的项目。</p>
+            <p>希望你能喜欢这个网站！</p>
+            <p>如果你有任何问题或建议，请随时与我联系。
+            </p>
+            <p>我在的QQ号是1526375406,邮箱是1526375406@qq.com</p>
+            <p>也让我们在<a target="_blank"  href="https://store.steampowered.com/">steam</a>见。</p>
+            <hr />
+        </div>
+        <div>
+            <h2>关于我</h2>
+            <p>我在桂平浔州初级中学读初二。</p>
+            <p>热爱编程和计算机科学，喜欢探索新技术和解决问题。</p>
+            <p>在业余时间，我喜欢打乒乓球、打篮球。</p>
+            <hr />
+        </div>
+        <div>
+            <h2>这是我对编程的一些建议（点击图像）</h2>
+            <h3>编程工具</h3>
+            <ul>
+                <li><a target="_blank" href="https://visualstudio.microsoft.com/zh-hans/free-developer-offers/"><img alt="VScode图像错误" src="https://img.onlinedown.net/download/202204/175437-62666fdd58a4e.jpg"></a></li>
+                <li><a target="_blank" href="https://dcloud.io/hbuilderx.html"><img alt="HBuilderx图像错误" src="https://so1.360tres.com/t01f41bd5504acf4a39.jpg"></a></li>
+                <li><a target="_blank" href="https://github.com"><img alt="Github图像错误" src="https://adatech.dev.br/wp-content/uploads/2024/01/20240105-github-destaque.png"></a></li>
+            </ul>
+            <h3>上传工具（一般用外国的）</h3>
+            <ul>
+                <li><a target="_blank" href="https://neocities.org"><img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.206ZPtsqsxlPxg_FbQZ72QHaDX?rs=1&pid=ImgDetMain" title="neocities" alt="neocities图像错误" ></a></li>
+                <li><a target="_blank" href="https://github.com"><img src="https://adatech.dev.br/wp-content/uploads/2024/01/20240105-github-destaque.png" title="Github" alt="Github图像错误" ></a></li>
+            </ul>
+        </div>
+        <hr/>
+        <div>
+            <form>
+                姓名：<input type="text" maxlength="10" value="请输入你的名字" style="width: 200px; height: 20px;">
+                性别：<input type="radio" value="nan" name="name">男
+                <input type="radio" value="nv" name="name">女
+                <br/>
+                邮箱：<input type="email" value="请输入你的邮箱" style="width: 200px; height: 20px;">
+                <br/>
+                        <textarea style="height: 90px; width: 400px;" >说说吧</textarea><br/>
+                <input type="button" value="提交" onclick="alert('感谢你的反馈！')">
+                <input type="reset" value="重置">
+            </form>
+        </div>
+        <hr/>
+        <div>
+            <h4>友情链接</h4>
+            <p><a target="_blank"  href="https://www.douyin.com">抖音</a></p>
+            <p><a target="_blank" href="https://www.bilibili.com">哔哩哔哩</a></p>
+            <p><a target="_blank" href="http://lvyestudy.com">编程学习网站</a></p>
+        </div>
+
+    </body>
+    </head>
+</html>
